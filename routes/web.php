@@ -7,6 +7,8 @@ use App\Http\Controllers\HelpPortalController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AdminDashboardController;
 
+use App\Http\Controllers\ChartController;
+
 
 
 /*
@@ -89,6 +91,9 @@ Route::patch('/admin/toggle-status/{id}', function ($id) {
 })->name('admin.toggleStatus');
 
 Route::post('/admin/logout', [App\Http\Controllers\AdminDashboardController::class, 'logout'])->name('admin.logout');
+
+Route::get('/chart', [ChartController::class, 'showChart'])->name('chart');
+
 
 require __DIR__.'/auth.php';
 
